@@ -1,0 +1,115 @@
+@font-face {
+  font-family: STM_Medium;
+  src: url(/fonts/SometypeMono-Medium.ttf);
+}
+
+body {
+    background-color: navy;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .app-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: navy;
+    padding: 10px 20px;
+    color: white;
+    z-index: 1000; /* Ensure the top bar is above other content */
+    border-bottom: 1px solid white; /* Bottom border only */
+  }
+  
+  .hamburger {
+    font-size: 32px;
+    cursor: pointer;
+    display: block; /* Show on smaller screens */
+  }
+  
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position the dropdown menu below the top bar */
+    right: 20px;
+    background-color: navy;
+    border: 1px solid white;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top: 1px solid navy; /* Correct syntax for top border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* Ensure the dropdown menu is above the top bar */
+  }
+  
+  .topbar-menu-title {
+    color: white;
+    background-color: navy;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'STM_Medium', Arial, sans-serif; /* Ensure the custom font is applied */
+    font-size: clamp(18px, 2.5vw, 24px); /* Example of font size scaling */
+    white-space: nowrap; /* Prevent text wrapping */
+    max-width: 100%; /* Ensure it does not exceed the parent container */
+    display: inline-block; /* Ensure the width fits the content */
+  }
+
+  .topbar-menu-title:hover {
+    color:yellow;
+    background-color: navy;
+    border:none;
+    transition: 0.3s;
+  }
+  
+  .topbar-menu-buttons {
+    color: white;
+    background-color: navy;
+    width: 100px;
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .topbar-menu-buttons:hover {
+    background-color:yellow;
+    color: navy;
+    transition: 0.3s;
+  }
+  
+  .info-container {
+    margin: 50px;
+    align-self: center;
+  }
+
+  .info-text {
+    color: white;
+    font-family: 'STM_Medium', Arial, sans-serif; /* Ensure the custom font is applied */
+    font-size: clamp(16px, 2.5vw, 20px); /* Example of font size scaling */
+  }
+
+  .info-text-link {
+    color: white;
+    font-family: 'STM_Medium', Arial, sans-serif; /* Ensure the custom font is applied */
+    font-size: clamp(16px, 2.5vw, 20px); /* Example of font size scaling */
+  }
+
+  .info-text-link:hover {
+    color: yellow;
+    transition: 0.3s;
+  }

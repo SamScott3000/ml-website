@@ -1,0 +1,48 @@
+@font-face {
+    font-family: STM_Medium;
+    src: url(/fonts/SometypeMono-Medium.ttf);
+  }
+
+.grid {
+    cursor: pointer;
+    user-select: none;
+    margin-top: 10px;
+  }
+  
+  .cell {
+    width: clamp(10px,2.5vw,15px);
+    height: clamp(10px,2.5vw,15px);
+    border: 0.5px solid #ccc;
+    background-color: rgb(32, 46, 62);
+  }
+  
+  .cell.filled {
+    background-color: white;
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'STM_Medium', Arial, sans-serif;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  
+  button:active {
+    background-color: yellow;
+  }
+  
+  button.active {
+    background-color: yellow;
+  }

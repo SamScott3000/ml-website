@@ -1,9 +1,8 @@
-import React, { useState} from 'react';
-import './App.css';
-import { useNavigate } from 'react-router-dom';
-import DrawGrid from './DrawGrid.js';
+import React, { useState } from 'react';
+import './About.css';
+import { useNavigate, Link } from 'react-router-dom';
 
-function App() {
+function About() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -16,10 +15,6 @@ function App() {
     setMenuOpen(!menuOpen);
   };
 
-  const predictDigit = (gridArray) => {
-    console.log('Predicting with array:', gridArray);
-  };
-  
   return (
     <div className="app-container">
       <div className="top-bar">
@@ -35,11 +30,16 @@ function App() {
           </div>
         )}
       </div>
-      <div className="content">
-        <DrawGrid onPredict={predictDigit} />
+      <div className="info-container">
+        <p className="info-text">
+            About Text Goes Here
+        </p>
+        <p className="info-text">
+          I plan on working on more projects in the future and you can follow my work via my <a className="info-text-link" href="https://anthonyduncalf.substack.com/" target="_blank" rel="noopener noreferrer">substack</a> or on my <a className="info-text-link" href="https://www.anthonyduncalf.dev/" target="_blank" rel="noopener noreferrer">website</a>. If you would like to support me with my work, you can make a donation <Link className="info-text-link" to="/donate">here</Link>.
+        </p>
       </div>
     </div>
   );
 }
 
-export default App;
+export default About;
