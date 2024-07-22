@@ -61,25 +61,25 @@ const DrawGrid = ({ onPredict }) => {
 
   const handlePredict = async () => {
     if (canPredict) {
-      const gridArray = getGridArray();
-      try {
-        const response = await fetch('http://localhost:5000/predict', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ grid: gridArray }),
-        });
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        const gridArray = getGridArray();
+        try {
+            const response = await fetch('http://localhost:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ grid: gridArray }),
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            setPrediction(data.prediction);
+        } catch (error) {
+            console.error('Error predicting digit:', error);
         }
-        const data = await response.json();
-        setPrediction(data.prediction);
-      } catch (error) {
-        console.error('Error predicting digit:', error);
-      }
     }
-  };
+};
 
   const handleClear = () => {
     setGrid(initializeGrid());
